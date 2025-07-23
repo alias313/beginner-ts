@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                   // modern JS output
+    "module": "ESNext",                   // Vitest runs on ESM
+    "moduleResolution": "node",           // classic Node resolution
+    "lib": ["ES2022"],                    // built-in APIs
+    "strict": true,                       // all strict flags on
+    "esModuleInterop": true,              // allow default imports from CJS
+    "skipLibCheck": true,                 // faster builds/tests
+    "resolveJsonModule": true,            // import JSON if needed
+    "noUnusedLocals": true,               // catch dead code
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,            // ensure returns
+    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,              // required for some tooling
+    "outDir": "dist",                     // if you ever emit
+    "rootDir": "src",                     // your source lives here
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],                     // only type-check src
+  "exclude": ["node_modules", "dist"]     // skip these
+}
