@@ -11,6 +11,15 @@ export default tseslint.config(
       globals: globals.browser
     },
     rules: {
+      // catch interface↔interface (and all other) redeclarations
+      "@typescript-eslint/no-redeclare": [
+        "error",
+        {
+          // by default `ignoreDeclarationMerge: true` lets interfaces with same name merge
+          // so we turn that off
+          ignoreDeclarationMerge: false
+        }
+      ],
       "@typescript-eslint/no-unsafe-declaration-merging": "error",
     },
   }

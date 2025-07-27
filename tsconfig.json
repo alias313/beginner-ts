@@ -3,7 +3,7 @@
     "target": "ES2022",                   // modern JS output
     "module": "ESNext",                   // Vitest runs on ESM
     "moduleResolution": "node",           // classic Node resolution
-    "lib": ["ES2022"],                    // built-in APIs
+    "lib": ["ES2022", "dom"],             // built-in APIs
     "strict": true,                       // all strict flags on
     "esModuleInterop": true,              // allow default imports from CJS
     "skipLibCheck": true,                 // faster builds/tests
