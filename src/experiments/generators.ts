@@ -9,6 +9,7 @@ interface FactoryIterable extends Iterable<number> {
 // “Factory” iterable, stateless and only provide [Symbol.iterator]()
 // that returns a new iterator each time
 const simpleIterator: FactoryIterable = {
+  // so that it can be used in for…of loops
   [Symbol.iterator]: function(): NumberIterator {
     return {
       index: -1,
@@ -45,7 +46,8 @@ interface CustomIterator extends IterableIterator<number> {
   entries(): IterableIterator<[number, number]>;
 }
 
-
+// “Singleton” iterator where the object is its own iterator.
+// Once you consume it, it’s “done” and you can’t restart or run two loops in parallel
 const randomIterator: CustomIterator = {
   index: -1,
   next(): IteratorResult<number> {
@@ -57,11 +59,12 @@ const randomIterator: CustomIterator = {
     };
   },
 
+  // so that it can be used in for…of loops
   [Symbol.iterator](): CustomIterator {
     return this;
   },
 
-  // generator method instad of a regular method that has to return an IteratorResult
+  // generator method instead of a regular method that has to return an IteratorResult
   // explicitly and needs conditional logic to work correctly
   *entries(): IterableIterator<[number, number]> {
     let localIndex = 0;
