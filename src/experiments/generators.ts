@@ -88,6 +88,8 @@ for (const [index, num] of randomIterator.entries()) {
   console.log(`Random number ${index + 1}: ${num}`);
 }
 
+// This will return undefined because the iterator is already consumed
+// and cannot be restarted or reused
 const [first, second, ...rest] = randomIterator;
 console.log(`First random number: ${first}`);
 console.log(`Second random number: ${second}`); 
