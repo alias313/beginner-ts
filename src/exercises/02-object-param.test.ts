@@ -5,7 +5,7 @@ type AddTwoNumbersArgs = {
     second: number;
 };
 
-export const addTwoNumbers = (params: addTwoNumbersArgs) => {
+export const addTwoNumbers = (params: AddTwoNumbersArgs) => {
     return params.first + params.second;
 };
 
