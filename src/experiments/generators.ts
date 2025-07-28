@@ -72,11 +72,14 @@ const randomIterator: CustomIterator = {
   },
 };
 
-const randomNumbers: number[] = [...randomIterator];
 
+/*
+// Simple way of getting indices without entries() method
+const randomNumbers: number[] = [...randomIterator];
 randomNumbers.forEach((num, index) => {
   console.log(`Random number ${index + 1}: ${num}`);
 });
+*/
 
 for (const [index, num] of randomIterator.entries()) {
   console.log(`Random number ${index + 1}: ${num}`);

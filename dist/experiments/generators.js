@@ -51,10 +51,12 @@ const randomIterator = {
         }
     },
 };
-const randomNumbers = [...randomIterator];
+/*
+const randomNumbers: number[] = [...randomIterator];
 randomNumbers.forEach((num, index) => {
-    console.log(`Random number ${index + 1}: ${num}`);
+  console.log(`Random number ${index + 1}: ${num}`);
 });
+*/
 for (const [index, num] of randomIterator.entries()) {
     console.log(`Random number ${index + 1}: ${num}`);
 }
